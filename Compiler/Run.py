@@ -25,9 +25,12 @@ def func_run():
                                     print(real_parameter[1:-1])
                                 else:
                                     for q in range(len(parse.var)):
-                                        try:
-                                            if tag[q] == real_parameter:
-                                                print(eval(var[q]))
+                                        if tag[q] == real_parameter:
+                                            edit = var[q]
+                                            for z in range(len(tag)):
+                                                if tag[z] in var[q]:
+                                                    edit = edit.replace(tag[z], var[z])
+                                            print(eval(edit))
 
 
 if __name__ == '__main__':
