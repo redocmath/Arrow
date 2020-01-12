@@ -1,0 +1,2 @@
+var = 3 + 5
+run print var
