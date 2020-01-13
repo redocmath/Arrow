@@ -27,9 +27,15 @@ def func_run():
                                     for q in range(len(parse.var)):
                                         if tag[q] == real_parameter:
                                             edit = var[q]
-                                            for z in range(len(tag)):
-                                                if tag[z] in var[q]:
-                                                    edit = edit.replace(tag[z], var[z])
+                                            temp = 0
+                                            while True:
+                                                temp = 0
+                                                for z in range(len(tag)):
+                                                    if tag[z] in edit:
+                                                        edit = edit.replace(tag[z], var[z])
+                                                        temp = 1
+                                                if temp == 0:
+                                                    break
                                             print(eval(edit))
 
 
