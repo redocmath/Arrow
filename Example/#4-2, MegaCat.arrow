@@ -1,0 +1,3 @@
+name = ''
+run input name
+run print 'Hello', name, '.', 'I am', 'Arrow.'
