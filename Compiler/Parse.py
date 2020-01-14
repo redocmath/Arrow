@@ -1,5 +1,5 @@
 var = {}
-func = {'print': 'string:out string'}
+func = {'print': 'string,string2:out string=>out string2'}
 run = {}
 errorCode = 0
 
@@ -53,7 +53,7 @@ def parse(location):
                     elif word[i] == 'run':
                         string = word[i + 2]
 
-                        for j in range(i + 3, len(word) - 1):
+                        for j in range(i + 3, len(word)):
                             string = string + ' ' + word[j]
                         run[word[i + 1]] = string
                         break
