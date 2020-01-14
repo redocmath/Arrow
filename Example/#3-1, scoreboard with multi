@@ -1,0 +1,10 @@
+player_A = 'Coder'
+player_B = 'Redoc'
+
+score_A = 100
+score_B = 89
+
+scoreboard_A = player_A + ':' + 'score_A' + '\n'
+scoreboard_B = player_B + ':' + 'score_B'
+
+run print scoreboard_A, scoreboard_B
