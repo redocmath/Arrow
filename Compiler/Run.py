@@ -12,31 +12,30 @@ def func_run():
         if run[i] in func:
             code = parse.func[run[i]].split(':')
             parameter = code[0].split(',')
-            real_parameter = value[i]
-
+            real_parameter = value[i].split(', ')
+            print(real_parameter)
+            print(parameter)
             fpart = code[1].split('=>')
             for j in range(len(fpart)):
                 part = fpart[j].split(' ')
                 for k in range(len(func)):
                     if part[0] == 'out':
-                        for p in range(len(parameter)):
-                            if part[1] == parameter[p]:
-                                if real_parameter[0] == "'" and real_parameter[len(real_parameter) - 1] == "'":
-                                    print(real_parameter[1:-1])
-                                else:
-                                    for q in range(len(parse.var)):
-                                        if tag[q] == real_parameter:
-                                            edit = var[q]
+                        if parameter[j] in part[1]:
+                            if real_parameter[j][0] == "'" and real_parameter[j][len(real_parameter[j]) - 1] == "'":
+                                print(real_parameter[j][1:-1])
+                            else:
+                                for q in range(len(parse.var)):
+                                    if tag[q] == real_parameter:
+                                        edit = var[q]
+                                        while True:
                                             temp = 0
-                                            while True:
-                                                temp = 0
-                                                for z in range(len(tag)):
-                                                    if tag[z] in edit:
-                                                        edit = edit.replace(tag[z], var[z])
-                                                        temp = 1
-                                                if temp == 0:
-                                                    break
-                                            print(eval(edit))
+                                            for z in range(len(tag)):
+                                                if tag[z] in edit:
+                                                    edit = edit.replace(tag[z], var[z])
+                                                    temp = 1
+                                            if temp == 0:
+                                                break
+                                        print(eval(edit))
 
 
 if __name__ == '__main__':
