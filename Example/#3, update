@@ -1,0 +1,9 @@
+var = 2
+run print var
+
+var = 3
+run print var
+
+# this is remark
+# before edit: 33
+# after edit: 23
