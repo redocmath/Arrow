@@ -1,0 +1,4 @@
+var = 0
+run input_int var
+if var % 2 == 0 => run print 'even number'
+else run print 'odd number'
