@@ -140,20 +140,24 @@ def parse_line(word):
                 func_run_line(word[i + 1], string)
                 break
             elif word[i] == 'if':
+                index = word.index('=>')
                 try:
-                    for a in range(i + 1, len(word)):
-                        for v in range(len(var_key)):
-                            for k in range(len(var_key)):
-                                if word[a - 2] == 'run':
-                                    word[a] = word[a].replace(var_key[k], var_value[k])
+                    for q in range(index):
+                        for a in range(len(var_key)):
+                            for b in range(len(var_key)):
+                                word[q] = word[q].replace(var_key[b], var_value[b])
                 except:
                     error('if statue error')
                 string = word[i + 1]
+
                 for j in range(i + 2, len(word)):
                     string = string + ' ' + word[j]
-
                 parameter = string.split(' => ')
-                if_statement[str(eval(parameter[0]))] = parameter[1]
+                if_string = parameter[1]
+                for b in range(2, len(parameter)):
+                    if_string = if_string + '=>' + parameter[b]
+                if_statement[eval(parameter[0])] = if_string
+                if_run(eval(parameter[0]), if_string)
                 break
             elif i != 0:
                 if error_code == 0:
@@ -173,6 +177,10 @@ def if_run(if_key, if_value):
     if if_key:
         if_value = if_value.split('=>')
         for i in range(len(if_value)):
+            for v in range(len(var_key)):
+                for k in range(len(var_key)):
+                    if not '=' or 'input' in if_value[i]:
+                        if_value[i] = if_value[i].replace(var_key[k], var_value[k])
             parse_line(if_value[i])
 
 
@@ -274,7 +282,7 @@ def parse(location_file):
                             string = word[4]
                             for j in range(5, len(word) - 1):
                                 if word[j - 1] == '=>':
-                                    string = string + '=>' + word[j]
+                                    string = string + word[j]
                                 else:
                                     string = string + ' ' + word[j]
                             func[word[i + 1]] = string
@@ -299,12 +307,10 @@ def parse(location_file):
                     elif word[i] == 'if':
                         index = word.index('=>')
                         try:
-                            for a in range(i + 1, len(word)):
-                                for v in range(len(var_key)):
-                                    for k in range(len(var_key)):
-                                        if a - 2 < index or word[a - 2] == 'run':
-                                            word[a] = word[a].replace(var_key[k], var_value[k])
-
+                            for q in range(index):
+                                for a in range(len(var_key)):
+                                    for b in range(len(var_key)):
+                                        word[q] = word[q].replace(var_key[b], var_value[b])
                         except:
                             error('if statue error')
                         string = word[i + 1]
@@ -323,14 +329,12 @@ def parse(location_file):
                         if not if_privious:
                             index = word.index('=>')
                             try:
-                                for a in range(i + 1, len(word)):
-                                    for v in range(len(var_key)):
-                                        for k in range(len(var_key)):
-                                            if a < index or word[a - 2] == 'run':
-                                                word[a] = word[a].replace(var_key[k], var_value[k])
-
+                                for q in range(index):
+                                    for a in range(len(var_key)):
+                                        for b in range(len(var_key)):
+                                            word[q] = word[q].replace(var_key[b], var_value[b])
                             except:
-                                error('elsif statue error')
+                                error('if statue error')
                             string = word[i + 1]
 
                             for j in range(i + 2, len(word)):
@@ -346,14 +350,6 @@ def parse(location_file):
                         break
                     elif word[i] == 'else':
                         if not if_privious:
-                            try:
-                                for a in range(i + 1, len(word)):
-                                    for v in range(len(var_key)):
-                                        for k in range(len(var_key)):
-                                            word[a] = word[a].replace(var_key[k], var_value[k])
-
-                            except:
-                                error('else statue error')
                             string = word[i + 1]
 
                             for j in range(i + 2, len(word)):
