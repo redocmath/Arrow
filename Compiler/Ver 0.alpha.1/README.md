@@ -22,21 +22,23 @@
 
 ## Prerequisites
 
-- npm >=5.5.0
-- node >=9.3.0
+- python => 3.0
 
-## Install
-
-```sh
-npm install
-```
+# 🖥 Run
+Read HOWTOUSE.md for detail.
 
 ## Usage
 
 ```sh
 python Compiler.py
 ```
-
+## Test
+before test, edit Debug var in _debug.py to True.
+then command 
+```sh
+python Compiler.py
+```
+again
 ## Author
 
 👤 **Coder**
