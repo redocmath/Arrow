@@ -19,7 +19,9 @@
 
 ## 🎥 Demo
 > This 🖥 **OPEN-SOURCE language** 🖥 will help you to enter to programming by the easiest way. 
-<video src="https://github.com/CoderLoveMath/Arrow/blob/master/DEMO.mp4" autoplay controls>
+<p align="center">
+  <img width="700" src="https://github.com/CoderLoveMath/Arrow/blob/master/DEMO.gif" alt="cli output"/>
+</p>
 
 ## Usage
 
