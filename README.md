@@ -23,7 +23,7 @@
   <img width="700" src="https://github.com/CoderLoveMath/Arrow/blob/master/DEMO.gif" alt="cli output"/>
 </p>
 
-## Usage
+## 🚀 Usage
 
 ```sh
 python Compiler.py
