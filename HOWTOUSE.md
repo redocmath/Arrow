@@ -10,10 +10,10 @@
 - 4 : also enjoy it 😃😃😃
 ## After Ver.0.beta
 - 1 : you just input this command
-``sh
+``
 python Compiler.py
 ``
-if you want to debug, input
-``sh
+<p>if you want to debug, input</p>
+``
 python Compiler.py debug_mode
 ``
