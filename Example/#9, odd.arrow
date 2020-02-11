@@ -1,0 +1,3 @@
+sum = 0
+for i time 100 => if i % 2 == 1 <= sum = sum + i
+run print sum
