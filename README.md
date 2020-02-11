@@ -29,7 +29,7 @@
 python Compiler.py
 ```
 
-## Run tests
+## ✅ Run tests
 
 ```sh
 python Compiler.py debug_mode
