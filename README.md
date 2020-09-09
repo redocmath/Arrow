@@ -1,4 +1,6 @@
 <h1 align="center">Welcome to Arrow Life 👋</h1>
+
+## Arrow was deprecated. We won't develop anymore. Thank you!
 <p>
   <img alt="Python" src="https://img.shields.io/badge/python->=3.6.0-red.svg?cacheSeconds=2592000" />
   <img alt="Version" src="https://img.shields.io/badge/version-0.beta.1-blue.svg?cacheSeconds=2592000" />
